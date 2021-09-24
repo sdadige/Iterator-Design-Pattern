@@ -1,0 +1,16 @@
+package interpreterpatternwindowstest;
+
+
+public class InterpreterPatternWindowsTest {
+
+    
+    public static void main(String[] args) {
+      WindowsCollection namesCollection = new WindowsCollection();
+		  System.out.println("Names: ");
+	      for(Iterator iter = namesCollection.getIterator(); iter.hasNext();){
+	         String name = (String)iter.next();
+	         System.out.println(name);
+	      } 	
+    }
+    
+}
