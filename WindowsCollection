@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package interpreterpatternwindowstest;
+
+/**
+ *
+ * @author DELL
+ */
+public class WindowsCollection implements Container{
+   public String names[] = {"windows 10" , "Windows 7" ,"Windows xp" , "Windows 5", "Windows Vista"};
+ 
+   @Override
+   public Iterator getIterator() {
+      return new WindowsIterator();
+   }
+ 
+   private class WindowsIterator implements Iterator {
+      int index;
+ 
+      @Override
+      public boolean hasNext() {      
+         if(index < names.length){
+            return true;
+         }
+         return false;
+      }
+ 
+      @Override
+      public Object next() {      
+         if(this.hasNext()){
+            return names[index++];
+         }
+         return null;
+      }		
+   }
+}
